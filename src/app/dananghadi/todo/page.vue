@@ -20,6 +20,7 @@ const Edittodo = (index: number) => {
   currentTab.value = 'edit'
   currentId.value = index
   inputtodo.value = todos.value[index]
+  inputtodo.value = ''
 }
 
 const saveEdit = (index: number) => {
@@ -102,7 +103,7 @@ const Addtodo = () => {
                     <span style="flex-grow: 1">{{ todo }}</span>
                     <n-space justify="end">
                       <n-button
-                        v-if="currentTab === 'show'"
+                        v-if="currentTab === 'show' || i !== currentId"
                         @click="Edittodo(i)"
                         strong
                         secondary
