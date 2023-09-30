@@ -9,8 +9,12 @@ const { data } = useHttp(computed(() => `https://reqres.in/api/users/${route.par
 </script>
 
 <template>
-  <div class="container">
-    <n-card :title="`${data?.data.first_name} ${data?.data.last_name}`" style="text-align: center">
+  <div class="w-full min-h-screen flex justify-center items-center">
+    <n-card
+      class="container"
+      :title="`${data?.data.first_name} ${data?.data.last_name}`"
+      style="text-align: center; font-weight: bold"
+    >
       <h1>{{ data?.data.email }}</h1>
       <br />
       <n-image :src="`${data?.data.avatar}`"></n-image>
@@ -19,14 +23,11 @@ const { data } = useHttp(computed(() => `https://reqres.in/api/users/${route.par
 </template>
 <style>
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Century Gothic;
+  width: 500px;
   background-color: theme('colors.white');
   border-radius: theme('borderRadius.lg');
   padding: theme('spacing.6');
   box-shadow: theme('boxShadow.xl');
+  font-family: Century Gothic;
 }
 </style>
